@@ -1,62 +1,104 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lunaris — Coming Soon</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    body {
+    :root {
+      --bg-color: #06112d;
+      --text-light: #a0aec0;
+      --text-main: #ffffff;
+      --accent: #4ca4f3;
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      background-color: #06112d;
-      color: #ffffff;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #0a1a3f, #06112d 80%);
+      color: var(--text-main);
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       text-align: center;
+      padding: 2rem;
     }
 
-    .logo {
-      max-width: 220px;
-      height: auto;
-      margin-bottom: 40px;
+    img.logo {
+      width: 160px;
+      margin-bottom: 1.8rem;
     }
 
     h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
     }
 
     p {
-      font-size: 1.2rem;
-      color: #a0aec0;
+      font-size: 1.1rem;
+      color: var(--text-light);
+      margin-bottom: 2rem;
     }
 
-    .illustration {
-      margin-top: 40px;
-      max-width: 300px;
-      opacity: 0.3;
+    .loader {
+      border: 6px solid rgba(255, 255, 255, 0.1);
+      border-top: 6px solid var(--accent);
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 2rem auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     footer {
-      position: absolute;
-      bottom: 20px;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: #444;
+      margin-top: auto;
+      padding-bottom: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      img.logo {
+        width: 130px;
+      }
+
+      .loader {
+        width: 36px;
+        height: 36px;
+        border-width: 5px;
+      }
     }
   </style>
 </head>
 <body>
-  <img src="logo_transparent.png" alt="Lunaris Logo" class="logo">
+  <img src="logo.png" alt="Lunaris logo" class="logo" />
   <h1>We're building something great</h1>
   <p>Our site is currently under construction. Stay tuned!</p>
-
-  <img src="https://cdn-icons-png.flaticon.com/512/189/189792.png" alt="Under construction" class="illustration">
+  <div class="loader"></div>
   <footer>© 2025 Lunaris</footer>
 </body>
 </html>
